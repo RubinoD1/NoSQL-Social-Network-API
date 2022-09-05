@@ -12,9 +12,17 @@ I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
 ```
 
-## Video Guide 
+## Table of Contents
 
-## Psuedocode 
+- [Video Guide](#video-guide)
+- [Psuedocode](#psuedocode)
+- [Models Guide](#models-guide)
+- [API Routes Guide](#api-routes-guide)
+
+
+## Video Guide <a name="video-guide"></a>
+
+## Psuedocode <a name="psuedocode"></a>
 
 Express.js for routing /  A MongoDB database  /  Mongoose ODM  
 --- May Optionally Use: a JS date library or the native JS Date Object to format timestamps 
@@ -32,7 +40,7 @@ Express.js for routing /  A MongoDB database  /  Mongoose ODM
 - THEN I am able to successfully create and delete reactions to thoughts 
 - and add and remove friends to a user’s friend list
 
-## Models Guide
+## Models Guide <a name="models-guide"></a>
 ```
 USER
 
@@ -101,9 +109,10 @@ createdAt
 Schema settings: This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
 ```
 
-## API Routes Guide
-
+## API Routes Guide <a name="api-routes-guide"></a>
+```
 /api/users
+```
 - GET all users 
 - GET a single user by its _id and populated thought and friend data 
 - POST a new user:
@@ -111,8 +120,8 @@ Schema settings: This will not be a model, but rather will be used as the reacti
 ```
 // example data
 {
-  "username": "lernantino",
-  "email": "lernantino@gmail.com"
+  "username": "Diane",
+  "email": "test@gmail.com"
 }
 ```
 - PUT to update a user by its _id 
@@ -120,13 +129,15 @@ Schema settings: This will not be a model, but rather will be used as the reacti
 
 ** BONUS: Remove a user's associated thoughts when deleted. **
 
-
+```
 /api/users/:userId/friends/:friendId
+```
 - POST to add a new friend to a user's friend list
 - DELETE to remove a friend from a user's friend list
 
-
+```
 /api/thoughts
+```
 - GET to get all thoughts 
 - GET to get a single thought by its _id
 - POST to create a new thought 
@@ -136,7 +147,7 @@ Schema settings: This will not be a model, but rather will be used as the reacti
 // example data
 {
   "thoughtText": "Here's a cool thought...",
-  "username": "lernantino",
+  "username": "Diane",
   "userId": "5edff358a0fcb779aa7b118b"
 }
 ```
@@ -144,7 +155,8 @@ Schema settings: This will not be a model, but rather will be used as the reacti
 - PUT to update a thought by its _id 
 - DELETE to remove a thought by its _id 
 
-
+```
 /api/thoughts/:thoughtId/reactions
+```
 - POST to create a reaction stored in a single thought's reactions array field
 - DELETE to pull and remove a reaction by the reaction's reactionId value
