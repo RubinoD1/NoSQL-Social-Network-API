@@ -4,17 +4,19 @@ const dateFormat = require("../utils/dateFormat");
 
 const ReactionSchema = new Schema(
   {
-    reactionId: {
+      reactionId: {
+      //Mongoose's ObjectId data type
       type: Schema.Types.ObjectId,
+      // Default value is set to a new ObjectId
       default: () => new Types.ObjectId(),
     },
-    
+    // reactionBody: string, required, 280 characters maximum
     reactionBody: {
       type: String,
       required: true,
       maxlength: 280,
     },
-
+    // username: string, required 
     username: {
       type: String,
       required: true,
@@ -22,7 +24,9 @@ const ReactionSchema = new Schema(
     
     createdAt: {
       type: Date,
+      // deafult value for the current timestamp
       default: Date.now,
+      // getter method to format the timestamp on query
       get: (timestamp) => dateFormat(timestamp),
     },
   },
