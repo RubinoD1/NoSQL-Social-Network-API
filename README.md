@@ -15,14 +15,16 @@ SO THAT my website can handle large amounts of unstructured data
 ## Table of Contents
 
 - [Video Guide](#video-guide)
-- [Psuedocode](#psuedocode)
+- [Pseudocode](#pseudocode)
 - [Models Guide](#models-guide)
 - [API Routes Guide](#api-routes-guide)
 
 
 ## Video Guide <a name="video-guide"></a>
 
-## Psuedocode <a name="psuedocode"></a>
+Video guide link: https://drive.google.com/file/d/1UjhOxWeKa_pL70TvjDc1ZrNdJg6uRfwR/view
+
+## Pseudocode <a name="pseudocode"></a>
 
 Express.js for routing /  A MongoDB database  /  Mongoose ODM  
 --- May Optionally Use: a JS date library or the native JS Date Object to format timestamps 
